@@ -72,6 +72,7 @@ StyleCopReport.xml
 *_i.c
 *_p.c
 *_h.h
+*_i.h
 *.ilk
 *.meta
 *.obj
@@ -131,6 +132,10 @@ $tf/
 _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
+
+
+# JustCode is a .NET coding add-in
+.JustCode
 
 # TeamCity is a build add-in
 _TeamCity*
@@ -395,4 +400,18 @@ FodyWeavers.xsd
 *.msp
 
 # JetBrains Rider
+.idea/
 *.sln.iml
+
+# ShopNServe
+src/ShopNServe.Web/Logs/*
+src/ShopNServe.Web/Logs/*
+src/ShopNServe.AuthServer/Logs/*
+src/ShopNServe.HttpApi.Host/Logs/*
+src/ShopNServe.HttpApi.HostWithIds/Logs/*
+src/ShopNServe.DbMigrator/Logs/*
+src/ShopNServe.Blazor.Server/Logs/*
+src/ShopNServe.Blazor.Server.Tiered/Logs/*
+
+# Use abp install-libs to restore.
+**/wwwroot/libs/*
