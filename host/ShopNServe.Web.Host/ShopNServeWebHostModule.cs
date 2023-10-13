@@ -158,6 +158,7 @@ public class ShopNServeWebHostModule : AbpModule
                 options.ResponseType = OpenIdConnectResponseType.CodeIdToken;
 
                 options.ClientId = configuration["AuthServer:ClientId"];
+                options.ClientSecret = configuration["AuthServer:ClientSecret"];
 
                 options.SaveTokens = true;
                 options.GetClaimsFromUserInfoEndpoint = true;
