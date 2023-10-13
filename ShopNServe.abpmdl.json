@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "ShopNServe.Domain.Shared": {
+      "path": "src/ShopNServe.Domain.Shared/ShopNServe.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "ShopNServe.Domain": {
+      "path": "src/ShopNServe.Domain/ShopNServe.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "ShopNServe.Application.Contracts": {
+      "path": "src/ShopNServe.Application.Contracts/ShopNServe.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "ShopNServe.Application": {
+      "path": "src/ShopNServe.Application/ShopNServe.Application.abppkg.json",
+      "folder": "src"
+    },
+    "ShopNServe.EntityFrameworkCore": {
+      "path": "src/ShopNServe.EntityFrameworkCore/ShopNServe.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "ShopNServe.MongoDB": {
+      "path": "src/ShopNServe.MongoDB/ShopNServe.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "ShopNServe.HttpApi": {
+      "path": "src/ShopNServe.HttpApi/ShopNServe.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "ShopNServe.HttpApi.Client": {
+      "path": "src/ShopNServe.HttpApi.Client/ShopNServe.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "ShopNServe.TestBase": {
+      "path": "test/ShopNServe.TestBase/ShopNServe.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "ShopNServe.EntityFrameworkCore.Tests": {
+      "path": "test/ShopNServe.EntityFrameworkCore.Tests/ShopNServe.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "ShopNServe.MongoDB.Tests": {
+      "path": "test/ShopNServe.MongoDB.Tests/ShopNServe.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "ShopNServe.Domain.Tests": {
+      "path": "test/ShopNServe.Domain.Tests/ShopNServe.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "ShopNServe.Application.Tests": {
+      "path": "test/ShopNServe.Application.Tests/ShopNServe.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "ShopNServe.HttpApi.Host": {
+      "path": "host/ShopNServe.HttpApi.Host/ShopNServe.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "ShopNServe.Web": {
+      "path": "src/ShopNServe.Web/ShopNServe.Web.abppkg.json",
+      "folder": "src"
+    },
+    "ShopNServe.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/ShopNServe.HttpApi.Client.ConsoleTestApp/ShopNServe.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "ShopNServe.Web.Host": {
+      "path": "host/ShopNServe.Web.Host/ShopNServe.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "ShopNServe.AuthServer": {
+      "path": "host/ShopNServe.AuthServer/ShopNServe.AuthServer.abppkg.json",
+      "folder": "host"
+    },
+    "ShopNServe.Host.Shared": {
+      "path": "host/ShopNServe.Host.Shared/ShopNServe.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "ShopNServe.Web.Unified": {
+      "path": "host/ShopNServe.Web.Unified/ShopNServe.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "ShopNServe.Blazor": {
+      "path": "src/ShopNServe.Blazor/ShopNServe.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "ShopNServe.Blazor.Host": {
+      "path": "host/ShopNServe.Blazor.Host/ShopNServe.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "ShopNServe.Blazor.Server": {
+      "path": "src/ShopNServe.Blazor.Server/ShopNServe.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "ShopNServe.Blazor.WebAssembly": {
+      "path": "src/ShopNServe.Blazor.WebAssembly/ShopNServe.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "ShopNServe.Blazor.Server.Host": {
+      "path": "host/ShopNServe.Blazor.Server.Host/ShopNServe.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}
