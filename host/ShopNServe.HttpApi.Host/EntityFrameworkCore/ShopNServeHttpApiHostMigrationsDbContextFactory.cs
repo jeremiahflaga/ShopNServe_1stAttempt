@@ -12,7 +12,7 @@ public class ShopNServeHttpApiHostMigrationsDbContextFactory : IDesignTimeDbCont
         var configuration = BuildConfiguration();
 
         var builder = new DbContextOptionsBuilder<ShopNServeHttpApiHostMigrationsDbContext>()
-            .UseSqlServer(configuration.GetConnectionString("ShopNServe"));
+            .UseNpgsql(configuration.GetConnectionString("ShopNServe"));
 
         return new ShopNServeHttpApiHostMigrationsDbContext(builder.Options);
     }
