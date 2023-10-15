@@ -120,7 +120,7 @@ public class ShopNServeWebHostModule : AbpModule
     {
         Configure<AbpDistributedCacheOptions>(options =>
         {
-            options.KeyPrefix = "ShopNServe:";
+            options.KeyPrefix = "ShopNServe:"; // TODO: move this to Shared.Hosting just like in eShopOnAbp
         });
     }
 

@@ -115,7 +115,7 @@ public class AdminPanelWebModule : AbpModule
     {
         Configure<AbpDistributedCacheOptions>(options =>
         {
-            options.KeyPrefix = "AdminPanel:";
+            options.KeyPrefix = "ShopNServe:"; // TODO: move this to Shared.Hosting just like in eShopOnAbp
         });
     }
 
