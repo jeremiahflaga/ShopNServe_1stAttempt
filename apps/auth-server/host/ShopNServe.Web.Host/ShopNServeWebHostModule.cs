@@ -167,6 +167,7 @@ public class ShopNServeWebHostModule : AbpModule
                 options.Scope.Add("email");
                 options.Scope.Add("phone");
                 options.Scope.Add("ShopNServe");
+                options.Scope.Add("ShopNServe.AdminPanel");
             });
     }
 

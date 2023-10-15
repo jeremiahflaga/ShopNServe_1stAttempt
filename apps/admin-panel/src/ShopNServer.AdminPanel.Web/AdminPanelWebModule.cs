@@ -163,7 +163,7 @@ public class AdminPanelWebModule : AbpModule
                 options.Scope.Add("roles");
                 options.Scope.Add("email");
                 options.Scope.Add("phone");
-                options.Scope.Add("ShopNServe");
+                options.Scope.Add("ShopNServe.AdminPanel");
             });
     }
 

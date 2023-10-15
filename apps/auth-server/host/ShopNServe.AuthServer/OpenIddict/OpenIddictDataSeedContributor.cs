@@ -61,6 +61,19 @@ public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDep
                 }
             });
         }
+
+        if (await _scopeManager.FindByNameAsync("ShopNServe.AdminPanel") == null)
+        {
+            await _scopeManager.CreateAsync(new OpenIddictScopeDescriptor
+            {
+                Name = "ShopNServe.AdminPanel",
+                DisplayName = "ShopNServe.AdminPanel Web",
+                Resources =
+                {
+                    "ShopNServe.AdminPanel"
+                }
+            });
+        }
     }
 
     private async Task CreateApplicationsAsync()
@@ -196,7 +209,10 @@ public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDep
                     OpenIddictConstants.GrantTypes.AuthorizationCode,
                     OpenIddictConstants.GrantTypes.Implicit
                 },
-                scopes: commonScopes,
+                scopes: new List<string>(commonScopes) 
+                { 
+                    "ShopNServe.AdminPanel" 
+                },
                 redirectUri: $"{webClientRootUrl}signin-oidc",
                 postLogoutRedirectUri: $"{webClientRootUrl}signout-callback-oidc"
             );
