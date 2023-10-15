@@ -168,6 +168,39 @@ public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDep
                 redirectUri: $"{swaggerRootUrl}/swagger/oauth2-redirect.html"
             );
         }
+
+        // ======================================================================
+
+        await CreateApplicationForAdminPanelWebClient(commonScopes, configurationSection);
+
+    }
+
+    private async Task CreateApplicationForAdminPanelWebClient(List<string> commonScopes, IConfigurationSection configurationSection)
+    {
+        // Admin Panel Web Client
+        var webClientId = configurationSection["ShopNServe_AdminPanel_Web:ClientId"];
+        if (!webClientId.IsNullOrWhiteSpace())
+        {
+            var webClientRootUrl = configurationSection["ShopNServe_AdminPanel_Web:RootUrl"]!.EnsureEndsWith('/');
+
+            /* ShopNServe_Web client is only needed if you created a tiered
+             * solution. Otherwise, you can delete this client. */
+            await CreateApplicationAsync(
+                name: webClientId!,
+                type: OpenIddictConstants.ClientTypes.Confidential,
+                consentType: OpenIddictConstants.ConsentTypes.Implicit,
+                displayName: "Web Application",
+                secret: configurationSection["ShopNServe_AdminPanel_Web:ClientSecret"] ?? "1q2w3e*",
+                grantTypes: new List<string> //Hybrid flow
+                {
+                    OpenIddictConstants.GrantTypes.AuthorizationCode,
+                    OpenIddictConstants.GrantTypes.Implicit
+                },
+                scopes: commonScopes,
+                redirectUri: $"{webClientRootUrl}signin-oidc",
+                postLogoutRedirectUri: $"{webClientRootUrl}signout-callback-oidc"
+            );
+        }
     }
 
     private async Task CreateApplicationAsync(
