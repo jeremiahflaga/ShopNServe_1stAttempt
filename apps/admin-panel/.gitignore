@@ -252,14 +252,14 @@ paket-files/
 *.sln.iml
 
 # AdminPanel
-src/ShopNServer.AdminPanel.Web/Logs/*
-src/ShopNServer.AdminPanel.Web/Logs/*
-src/ShopNServer.AdminPanel.AuthServer/Logs/*
-src/ShopNServer.AdminPanel.HttpApi.Host/Logs/*
-src/ShopNServer.AdminPanel.HttpApi.HostWithIds/Logs/*
-src/ShopNServer.AdminPanel.DbMigrator/Logs/*
-src/ShopNServer.AdminPanel.Blazor.Server/Logs/*
-src/ShopNServer.AdminPanel.Blazor.Server.Tiered/Logs/*
+src/ShopNServe.AdminPanel.Web/Logs/*
+src/ShopNServe.AdminPanel.Web/Logs/*
+src/ShopNServe.AdminPanel.AuthServer/Logs/*
+src/ShopNServe.AdminPanel.HttpApi.Host/Logs/*
+src/ShopNServe.AdminPanel.HttpApi.HostWithIds/Logs/*
+src/ShopNServe.AdminPanel.DbMigrator/Logs/*
+src/ShopNServe.AdminPanel.Blazor.Server/Logs/*
+src/ShopNServe.AdminPanel.Blazor.Server.Tiered/Logs/*
 
 # Use abp install-libs to restore.
 **/wwwroot/libs/*
