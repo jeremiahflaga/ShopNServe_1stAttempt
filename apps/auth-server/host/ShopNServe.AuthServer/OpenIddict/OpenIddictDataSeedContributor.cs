@@ -85,7 +85,8 @@ public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDep
             OpenIddictConstants.Permissions.Scopes.Phone,
             OpenIddictConstants.Permissions.Scopes.Profile,
             OpenIddictConstants.Permissions.Scopes.Roles,
-            "ShopNServe"
+            "ShopNServe",
+            "ShopNServe.AdminPanel",
         };
 
         var configurationSection = _configuration.GetSection("OpenIddict:Applications");
@@ -191,18 +192,18 @@ public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDep
     private async Task CreateApplicationForAdminPanelWebClient(List<string> commonScopes, IConfigurationSection configurationSection)
     {
         // Admin Panel Web Client
-        var webClientId = configurationSection["ShopNServe_AdminPanel_Web:ClientId"];
-        if (!webClientId.IsNullOrWhiteSpace())
+        var adminPanelWebClientId = configurationSection["ShopNServe_AdminPanel_Web:ClientId"];
+        if (!adminPanelWebClientId.IsNullOrWhiteSpace())
         {
             var webClientRootUrl = configurationSection["ShopNServe_AdminPanel_Web:RootUrl"]!.EnsureEndsWith('/');
 
             /* ShopNServe_Web client is only needed if you created a tiered
              * solution. Otherwise, you can delete this client. */
             await CreateApplicationAsync(
-                name: webClientId!,
+                name: adminPanelWebClientId!,
                 type: OpenIddictConstants.ClientTypes.Confidential,
                 consentType: OpenIddictConstants.ConsentTypes.Implicit,
-                displayName: "Web Application",
+                displayName: "Admin Panel Web Application",
                 secret: configurationSection["ShopNServe_AdminPanel_Web:ClientSecret"] ?? "1q2w3e*",
                 grantTypes: new List<string> //Hybrid flow
                 {
@@ -211,7 +212,7 @@ public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDep
                 },
                 scopes: new List<string>(commonScopes) 
                 { 
-                    "ShopNServe.AdminPanel" 
+                    //"ShopNServe.AdminPanel" 
                 },
                 redirectUri: $"{webClientRootUrl}signin-oidc",
                 postLogoutRedirectUri: $"{webClientRootUrl}signout-callback-oidc"
