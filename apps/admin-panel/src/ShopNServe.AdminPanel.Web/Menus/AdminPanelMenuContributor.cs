@@ -2,8 +2,8 @@
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ShopNServe.AdminPanel.Localization;
-using ShopNServe.AdminPanel.MultiTenancy;
+using ShopNServe.Localization;
+using ShopNServe.MultiTenancy;
 using Volo.Abp.Account.Localization;
 using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.Identity.Web.Navigation;
@@ -38,7 +38,7 @@ public class AdminPanelMenuContributor : IMenuContributor
     private Task ConfigureMainMenuAsync(MenuConfigurationContext context)
     {
         var administration = context.Menu.GetAdministration();
-        var l = context.GetLocalizer<AdminPanelResource>();
+        var l = context.GetLocalizer<ShopNServeResource>();
 
         context.Menu.Items.Insert(
             0,
@@ -68,7 +68,7 @@ public class AdminPanelMenuContributor : IMenuContributor
 
     private Task ConfigureUserMenuAsync(MenuConfigurationContext context)
     {
-        var l = context.GetLocalizer<AdminPanelResource>();
+        var l = context.GetLocalizer<ShopNServeResource>();
         var accountStringLocalizer = context.GetLocalizer<AccountResource>();
         var authServerUrl = _configuration["AuthServer:Authority"] ?? "";
 

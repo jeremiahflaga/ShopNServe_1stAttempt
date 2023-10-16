@@ -9,8 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
-using ShopNServe.AdminPanel.Localization;
-using ShopNServe.AdminPanel.MultiTenancy;
+using ShopNServe.Localization;
+using ShopNServe.MultiTenancy;
 using ShopNServe.AdminPanel.Web.Menus;
 using StackExchange.Redis;
 using Microsoft.OpenApi.Models;
@@ -48,8 +48,8 @@ using Volo.Abp.VirtualFileSystem;
 namespace ShopNServe.AdminPanel.Web;
 
 [DependsOn(
-    typeof(AdminPanelHttpApiClientModule),
-    typeof(AdminPanelHttpApiModule),
+    //typeof(AdminPanelHttpApiClientModule),
+    //typeof(AdminPanelHttpApiModule),
     typeof(AbpAspNetCoreAuthenticationOpenIdConnectModule),
     typeof(AbpAspNetCoreMvcClientModule),
     typeof(AbpHttpClientWebModule),
@@ -71,9 +71,9 @@ public class AdminPanelWebModule : AbpModule
         context.Services.PreConfigure<AbpMvcDataAnnotationsLocalizationOptions>(options =>
         {
             options.AddAssemblyResource(
-                typeof(AdminPanelResource),
-                typeof(AdminPanelDomainSharedModule).Assembly,
-                typeof(AdminPanelApplicationContractsModule).Assembly,
+                typeof(ShopNServeResource),
+                typeof(ShopNServeDomainSharedModule).Assembly,
+                typeof(ShopNServeApplicationContractsModule).Assembly,
                 typeof(AdminPanelWebModule).Assembly
             );
         });
@@ -181,8 +181,8 @@ public class AdminPanelWebModule : AbpModule
         {
             Configure<AbpVirtualFileSystemOptions>(options =>
             {
-                options.FileSets.ReplaceEmbeddedByPhysical<AdminPanelDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}ShopNServe.AdminPanel.Domain.Shared"));
-                options.FileSets.ReplaceEmbeddedByPhysical<AdminPanelApplicationContractsModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}ShopNServe.AdminPanel.Application.Contracts"));
+                options.FileSets.ReplaceEmbeddedByPhysical<ShopNServeDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}ShopNServe.AdminPanel.Domain.Shared"));
+                options.FileSets.ReplaceEmbeddedByPhysical<ShopNServeApplicationContractsModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}ShopNServe.AdminPanel.Application.Contracts"));
                 options.FileSets.ReplaceEmbeddedByPhysical<AdminPanelWebModule>(hostingEnvironment.ContentRootPath);
             });
         }
