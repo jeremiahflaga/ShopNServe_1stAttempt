@@ -50,6 +50,7 @@ namespace ShopNServe.AdminPanel.Web;
 [DependsOn(
     //typeof(AdminPanelHttpApiClientModule),
     //typeof(AdminPanelHttpApiModule),
+    typeof(ShopNServeHttpApiClientModule),
     typeof(AbpAspNetCoreAuthenticationOpenIdConnectModule),
     typeof(AbpAspNetCoreMvcClientModule),
     typeof(AbpHttpClientWebModule),
@@ -73,7 +74,7 @@ public class AdminPanelWebModule : AbpModule
             options.AddAssemblyResource(
                 typeof(ShopNServeResource),
                 typeof(ShopNServeDomainSharedModule).Assembly,
-                typeof(ShopNServeApplicationContractsModule).Assembly,
+                //typeof(ShopNServeApplicationContractsModule).Assembly,
                 typeof(AdminPanelWebModule).Assembly
             );
         });
@@ -181,8 +182,12 @@ public class AdminPanelWebModule : AbpModule
         {
             Configure<AbpVirtualFileSystemOptions>(options =>
             {
-                options.FileSets.ReplaceEmbeddedByPhysical<ShopNServeDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}ShopNServe.AdminPanel.Domain.Shared"));
-                options.FileSets.ReplaceEmbeddedByPhysical<ShopNServeApplicationContractsModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}ShopNServe.AdminPanel.Application.Contracts"));
+                //options.FileSets.ReplaceEmbeddedByPhysical<ShopNServeDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}ShopNServe.AdminPanel.Domain.Shared"));
+                //options.FileSets.ReplaceEmbeddedByPhysical<ShopNServeApplicationContractsModule>(Path.Combine(hostingEnvironment.ContentRootPath, $"..{Path.DirectorySeparatorChar}ShopNServe.AdminPanel.Application.Contracts"));
+
+                options.FileSets.ReplaceEmbeddedByPhysical<ShopNServeDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath,
+                    string.Format("..{0}..{0}..{0}auth-server{0}src{0}ShopNServe.Domain.Shared", Path.DirectorySeparatorChar)));
+
                 options.FileSets.ReplaceEmbeddedByPhysical<AdminPanelWebModule>(hostingEnvironment.ContentRootPath);
             });
         }
